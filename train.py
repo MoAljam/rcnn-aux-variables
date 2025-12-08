@@ -22,7 +22,12 @@ SAVE_PATH = "model_weights/rcnn_model.pth"
 parser = ArgumentParser()
 # dataset parameters
 parser.add_argument("--n_clutter", type=int, default=N_CLUTTER, help="Number of clutter pieces in each image")
-parser.add_argument("--cache", type=bool, default=CACHE, help="Whether to cache datasets in RAM")
+parser.add_argument(
+    "--cache",
+    action="store_true",
+    default=False,  # or CACHE
+    help="Whether to cache datasets in RAM",
+)
 parser.add_argument(
     "--num_workers_train", type=int, default=NUM_WORKERS_TRAIN, help="Number of workers for train dataloader"
 )
